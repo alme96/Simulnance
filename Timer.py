@@ -4,14 +4,20 @@
 import threading
 
 def cancel_order(book,order):
-    book.remove(order)
-    return book
+    for i in range(0,len(book)-1):
+        if book[i]==order:
+            book.remove(order)
+        else:
+            pass
+    return
 
-book=[1,2,3,4,5,6,7,8,9,10];
-order=6;
-timer1=threading.Timer(5,cancel_order,[book,order])
-timer2=threading.Timer(6,print,['neu= ',book])
 
-print('alt= ',book)
+LOB=['buy20','sell10','sell50','buy100','sell40'];
+order3='sell50';
+timer1=threading.Timer(5,cancel_order,[LOB,order3])
+timer2=threading.Timer(6,print,['neu= ',LOB])
+
+print('alt= ',LOB)
+cancel_order(LOB,order3)
 timer1.start()
 timer2.start()
