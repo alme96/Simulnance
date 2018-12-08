@@ -23,7 +23,7 @@ Programming language: Python
 
 ## The Model
 
-(In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. Say how you want to measure them.) (Why is your model a good abstraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
+(In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. The variables are measured through agents, time and stock parameters. The amount of Agents are set, the amount of days and daily section in which the model is applied is set by authors . In addtion Intial stock amount is given to agent and money creation is not allowed in the model.) (Why is your model a good abstraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
 
 
 ## Fundamental Questions
