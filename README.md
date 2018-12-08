@@ -1,6 +1,6 @@
 Group Name: Simulnance
 
-Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüs Vincent
+Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent
 
 Project Title: Trade!t
 
@@ -10,14 +10,14 @@ Programming language: Python
 # Modeling and Simulation of Social Systems Fall 2018 – Research Plan (Template)
 (text between brackets to be removed)
 
-> * Group Name: (be creative!)
-> * Group participants names: (alphabetically sorted by last name)
-> * Project Title: (can be changed later)
-> * Programming language: (Python or MATLAB)
+> * Group Name: (Simulnance)
+> * Group participants names: (Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent)
+> * Project Title: (Trade!t)
+> * Programming language: (Python)
 
 ## General Introduction
 
-(States your motivation clearly: why is it important / interesting to solve this problem?)
+(The primary motivation of the paper is to mimic a real financial market using agents based simulation. Secondary motivation is to identify and indicate possible impediments in simulating the market.States your motivation clearly: Although progress is made to simulate the real life behavior of Financial price behavior, due to the complexity of the system, there is still a gap to be filled in representing the financial market.)
 (Add real-world examples, if any)
 (Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
 
@@ -28,8 +28,7 @@ Programming language: Python
 
 ## Fundamental Questions
 
-(At the end of the project you want to find the answer to these questions)
-(Formulate a few, clear questions. Articulate them in sub-questions, from the more general to the more specific. )
+(The paper addresses three main research questions. Firstly, what is the reproducibility potential of agent based financial market simulation executed in the research of Raberto, 2005? Secondly, what are the similarities and differences in the outputs of the simulations? Is improvement possible? )
 
 
 ## Expected Results
@@ -39,14 +38,15 @@ Programming language: Python
 
 ## References 
 
-(Add the bibliographic references you intend to use)
-(Explain possible extension to the above models)
-(Code / Projects Reports of the previous year)
+(Pérez, I. (n.d.). High Frequency Trading II: Limit Order Book. Retrieved from https://www.quantstart.com/articles/high-frequency-trading-ii-limit-order-book
+Raberto, M., & Cincotti, S. (2005). Modeling and simulation of a double auction artificial financial market. Physica A: Statistical Mechanics and Its Applications, 355(1), 34–45. https://doi.org/10.1016/j.physa.2005.02.061
+Raberto, M., Cincotti, S., Focardi, S. M., & Marchesi, M. (2001). Agent-based simulation of a ÿnancial market, 299, 319–327.)
+
 
 
 ## Research Methods
 
-(Cellular Automata, Agent-Based Model, Continuous Modeling...) (If you are not sure here: 1. Consult your colleagues, 2. ask the teachers, 3. remember that you can change it afterwards)
+( Agent-Based Model)
 
 
 ## Other
