@@ -38,7 +38,7 @@ Raberto, M., Cincotti, S., Focardi, S. M., & Marchesi, M. (2001). Agent-based si
 
 ## Research Methods
 
-( Agent-Based Model)
+Agent-Based Modelling
 
 
 ## Other
