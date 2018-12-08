@@ -17,23 +17,21 @@ Programming language: Python
 
 ## General Introduction
 
-(The primary motivation of the paper is to mimic a real financial market using agents based simulation. Secondary motivation is to identify and indicate possible impediments in simulating the market.States your motivation clearly: Although progress is made to simulate the real life behavior of Financial price behavior, due to the complexity of the system, there is still a gap to be filled in representing the financial market.)
-(Add real-world examples, if any)
-(Put the problem into a historical context, from what does it originate? Are there already some proposed solutions?)
+The primary motivation of the paper is to mimic a real financial market using agents based simulation. Secondary motivation is to identify and indicate possible impediments in simulating the market.States your motivation clearly: Although progress is made to simulate the real life behavior of Financial price behavior, due to the complexity of the system, there is still a gap to be filled in representing the financial market.)
 
 ## The Model
 
-(In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. The variables are measured through agents, time and stock parameters. The amount of Agents are set, the amount of days and daily section in which the model is applied is set by authors . In addtion, Intial stock amount is given to agent and money creation is not allowed in the model.) (The model addresed key parameters used in the research of Raberto, 2005.Through using multiple scenarios for the simulation, authors were able to analyze the stability of the outputs.) 
+In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. The variables are measured through agents, time and stock parameters. The amount of Agents are set, the amount of days and daily section in which the model is applied is set by authors . In addtion, Intial stock amount is given to agent and money creation is not allowed in the model.) (The model addresed key parameters used in the research of Raberto, 2005.Through using multiple scenarios for the simulation, authors were able to analyze the stability of the outputs.
 
 
 ## Fundamental Questions
 
-(The paper addresses three main research questions. Firstly, what is the reproducibility potential of agent based financial market simulation executed in the research of Raberto, 2005? Secondly, what are the similarities and differences in the outputs of the simulations? Is improvement possible? )
+The paper addresses three main research questions. Firstly, what is the reproducibility potential of agent based financial market simulation executed in the research of Raberto, 2005? Secondly, what are the similarities and differences in the outputs of the simulations? Is improvement possible? 
 
 
 ## Expected Results
 
-(The anticipated result before starting our research was a recreateion of the simulation executed by (Raberto 2005)).
+The anticipated result before starting our research was a recreateion of the simulation executed by (Raberto 2005).
 
 
 ## References 
@@ -53,7 +51,6 @@ Raberto, M., Cincotti, S., Focardi, S. M., & Marchesi, M. (2001). Agent-based si
 
 ## Other
 
-(mention datasets you are going to use)
 
 # Reproducibility
 
