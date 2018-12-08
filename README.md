@@ -1,7 +1,8 @@
-Group Name: Simulnance
+#Group Name: Simulnance
 
-Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüs Vincent
+#Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüs Vincent
 
-Project Title: Trade!t
+#Project Title: Trade!t
 
-Programming language: Python
+#Programming language: Python
+
