@@ -1,11 +1,3 @@
-Group Name: Simulnance
-
-Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent
-
-Project Title: Trade!t
-
-Programming language: Python
-
 
 # Modeling and Simulation of Social Systems Fall 2018 – Research Plan (Template)
 (text between brackets to be removed)
