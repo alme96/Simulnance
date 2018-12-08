@@ -23,7 +23,7 @@ Programming language: Python
 
 ## The Model
 
-(Define dependent and independent variables you want to study. Say how you want to measure them.) (Why is your model a good abstraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
+(In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. Say how you want to measure them.) (Why is your model a good abstraction of the problem you want to study?) (Are you capturing all the relevant aspects of the problem?)
 
 
 ## Fundamental Questions
