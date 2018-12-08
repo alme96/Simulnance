@@ -1,6 +1,6 @@
 
 # Modeling and Simulation of Social Systems Fall 2018 – Research Plan (Template)
-(text between brackets to be removed)
+
 
 > * Group Name: (Simulnance)
 > * Group participants names: (Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent)
@@ -9,7 +9,7 @@
 
 ## General Introduction
 
-The primary motivation of the paper is to mimic a real financial market using agents based simulation. Secondary motivation is to identify and indicate possible impediments in simulating the market.States your motivation clearly: Although progress is made to simulate the real life behavior of Financial price behavior, due to the complexity of the system, there is still a gap to be filled in representing the financial market.)
+The primary motivation of the paper is to mimic a real financial market using agents based simulation. Secondary motivation is to identify and indicate possible impediments in simulating the market.States your motivation clearly: Although progress is made to simulate the real life behavior of Financial price behavior, due to the complexity of the system, there is still a gap to be filled in representing the financial market.
 
 ## The Model
 
