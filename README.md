@@ -33,13 +33,15 @@ Programming language: Python
 
 ## Expected Results
 
-(What are the answers to the above questions that you expect to find before starting your research?)
+(The anticipated result before starting our research was a recreateion of the simulation executed by (Raberto 2005)).
 
 
 ## References 
 
 (Pérez, I. (n.d.). High Frequency Trading II: Limit Order Book. Retrieved from https://www.quantstart.com/articles/high-frequency-trading-ii-limit-order-book
+
 Raberto, M., & Cincotti, S. (2005). Modeling and simulation of a double auction artificial financial market. Physica A: Statistical Mechanics and Its Applications, 355(1), 34–45. https://doi.org/10.1016/j.physa.2005.02.061
+
 Raberto, M., Cincotti, S., Focardi, S. M., & Marchesi, M. (2001). Agent-based simulation of a ÿnancial market, 299, 319–327.)
 
 
