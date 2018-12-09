@@ -357,6 +357,7 @@ plt.show()
 ```
 
 Next we talk about the implementation of the advanced model which is consistent with the file advanced_rep.
+The main diffrence to the simple model is the use of the function `standard_dev(self)` which is a method of the advanced model and therefore introduced in the chapter below.
 
 ### The advanced model
 First some packages must be installed. The mesa package and the matplotlib package aren't installed by default.
@@ -628,4 +629,50 @@ After that, the order at the ask_price from the limit_order_book gets canceled.
             self.shares = self.shares + n_trade
             index_t = self.model.limit_order_book[0].index((ask_price, a_deadline, a_id))
             del(self.model.limit_order_book[0][index_t])
+```
+
+In the fallowing we create a model and let it run for m_days consisting of time_steps_per_day
+To tract the current ask and bid price in every time step,
+we append the values to a list i.e. order_limits, which is an attribute of the model, in every time step.
+To stay consistent with the paper which we replicate by parts, we clear the limit_order_book after every trading day.
+
+```
+init_l_o_b = [[], []]
+advanced_model = TradingModel(init_l_o_b)
+
+for day in range(m_days):
+    for second in range(time_steps_per_day):
+        advanced_model.step()
+        if advanced_model.clock % 60 == 0:
+            advanced_model.order_limits.append((advanced_model.get_limit_price(), advanced_model.clock))
+    advanced_model.limit_order_book = [[], []]
+```
+Next the estimated price path and its log returns are calculated.
+```
+interpolate = price_path(advanced_model.order_limits)
+log_return = log_ret(interpolate)
+y_val = [samples[0] for samples in log_return]
+```
+With the samples `y_val` given, we can calculate the Jarque-Bera test.
+```
+test_statistic, p_value = stats.jarque_bera(y_val)
+if p_value < 0.005:
+    print("The null hypotheses of normal distribution for the log returns is rejected.")
+else:
+    print("The null hypotheses of normal distribution for the log returns cannot be rejected.")
+```
+Below we plot the log returns. The bars need a large width to be visible.
+```
+x_val = [select_x[1] for select_x in log_return]
+y_val = [select_y[0] for select_y in log_return]
+plt.bar(x_val, y_val, width=100)
+plt.show()
+```
+As a last step we plot the estimated price path.
+```
+x_val_price = [select_x[1] for select_x in interpolate]
+y_val_price = [select_y[0] for select_y in interpolate]
+plt.plot(x_val_price, y_val_price)
+plt.axis([x_val_price[0], x_val_price[len(x_val_price)-1], 80, 120])
+plt.show()
 ```
