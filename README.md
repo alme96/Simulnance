@@ -69,18 +69,18 @@ The second one (the advanced model) will consider a dependency between the decis
 
 ### The simple model
 First some packages must be installed. The mesa package and the matplotlib package aren't installed by default.
-
+```
 from mesa import Agent, Model  
 import random  
 import matplotlib.pyplot as plt  
 import numpy as np  
 import math  
 from scipy import stats  
-
+```
 Initialization of some global variables.
 Apart from m_days they have the same values as in the paper which we replicate.
 We chose a smaller number of days to decrease the computational effort when doing the plots. As we did the Jarque-Bera test we made a run without plots. There we increased m_days to 1000, which corresponds to the value of the paper.
-
+```
 m_days = 10  
 time_steps_per_day = 25200  
 life_span = 600  
@@ -91,7 +91,7 @@ init_cash_a = 100000
 init_shares_a = 1000  
 mean = 1  
 std = 0.005  
-
+```
 The fallowing function determines a random amount of shares which both traders can afford.
 ```
 def trade_amount(a_val, b_val):
