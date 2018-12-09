@@ -66,6 +66,7 @@ The results that we came up with are the visualizations of the estimated price p
 Since we implemented two models we derived all the results two times. Therefore, this test will be split into two parts.
 The first one (the simple model) considers the simpler model where the decision making of the traders isn't influenced by price volatility.
 The second one (the advanced model) will consider a dependency between the decision making of traders and price volatility.
+Next we talk about the implementation of the simple model which is consistent with the file simple_rep.
 
 ### The simple model
 First some packages must be installed. The mesa package and the matplotlib package aren't installed by default.
@@ -354,3 +355,7 @@ plt.plot(x_val_price, y_val_price)
 plt.axis([x_val_price[0], x_val_price[len(x_val_price)-1], 80, 120])
 plt.show()
 ```
+
+Next we talk about the implementation of the advanced model which is consistent with the file advanced_rep.
+
+### The advanced model
