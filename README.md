@@ -57,8 +57,8 @@ In this simple reproducibility test we let you simulate the market and plot the 
 3. Search for the global variable "std" which has been set to 0.001 by default. Change it to 0.01 and run the programm again.
 The plot which you receive this time (similar to the second image below) should vary stronger around 100 then before. This corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.  
 
-![small_std](Reproducibility_light\small_std.png)
-![large_std](Reproducibility_light\large_std.png)
+![small_std](/Reproducibility_light/small_std.png)
+![large_std](/Reproducibility_light/large_std.png)
 
 ## Full test
 The results that we came up with are the visualizations of the estimated price path of the stock and its log returns.
