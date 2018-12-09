@@ -57,6 +57,7 @@ In this simple reproducibility test we let you simulate the market and plot the 
 3. Search for the global variable "std" which has been set to 0.001 by default. Change it to 0.01 and run the programm again.
 The plot which you receive this time should vary stronger around 100 then before, which corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.
 ![some text](https://github.com/alme96/Simulnance/blob/master/small_std.png)
+![some more text](https://github.com/alme96/Simulnance/blob/master/large_std.png)
 
 ## Full test
 The results that we came up with are the visualizations of the estimated price path of the stock and its log returns.
