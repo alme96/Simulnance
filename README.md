@@ -55,7 +55,8 @@ In this simple reproducibility test we let you simulate the market and plot the 
 1. Make sure to have all the packages needed installed. The two packages "matplotlib" and "mesa" are not preinstalled.
 2. Run the file "Reproducibility_light" with python without changing any of the code. After say 5 seconds you should receive a plot of the price path similar to the first image below. This result is obtained for a small standard deviation of the normal distribution, which corresponds to traders behaving all very similar.
 3. Search for the global variable "std" which has been set to 0.001 by default. Change it to 0.01 and run the programm again.
-The plot which you receive this time (similar to the second image below) should vary stronger around 100 then before. This corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.
+The plot which you receive this time (similar to the second image below) should vary stronger around 100 then before. This corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.  
+
 ![small_std](small_std.png)
 ![large_std](large_std.png)
 
