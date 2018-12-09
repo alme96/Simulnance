@@ -92,7 +92,7 @@ init_shares_a = 1000
 mean = 1  
 std = 0.005  
 ```
-The fallowing function determines a random amount of shares which both traders can afford.
+The function trade_amount determines a random amount of shares which both traders can afford.
 ```
 def trade_amount(a_val, b_val):
     if a_val <= 0 or b_val <= 0:  # To assure that the input of randint corresponds to a valid interval
@@ -100,4 +100,103 @@ def trade_amount(a_val, b_val):
     temp0 = min(a_val, b_val)
     temp1 = random.randint(0, temp0)
     return temp1
+```
+The function next_order returns the random time interval between consecutive order placements.
+```
+def next_order():
+    return math.ceil(np.random.exponential(avg_order_waiting_time, None))
+```
+The class TradingModel inherits from Model and determines the structure of our model.
+Various functions have been implemented.
+
+On behalf of `__init__(self, l_o_b)`:  
+Initialisation of the model. Here all the agents are created.  
+        Furthermore we need:  
+            - limit_order_book; to store all the unresolved sell and buy orders.  
+            - clock; as a reference value for the orders which are cancelled after a while and the order waiting times.  
+            - order_arrival; as a fixed time step where the next order gets placed  
+            - last_sell & last_buy; to circumvent an empty limit_order_book  
+            - agent_list; to store all the agents  
+        More on behalf of the limit_order_book:  
+        The limit_order_book is a list with 2 entries, which again are lists. The first one stores the sell order
+        the second one stores the buy order. Each sell resp. buy order is a tuple with 3 entries. The first entry
+        corresponds to the price per share offered in the order. The second one corresponds to the time step
+        when the order gets canceled. The third one corresponds to the unique_id of the agent how placed the order.
+```
+class TradingModel(Model):
+    def __init__(self, l_o_b):
+        """
+        Initialisation of the model. Here all the agents are created.
+        Furthermore we need:
+            - limit_order_book; to store all the unresolved sell and buy orders.
+            - clock; as a reference value for the orders which are cancelled after a while and the order waiting times.
+            - order_arrival; as a fixed time step where the next order gets placed
+            - last_sell & last_buy; to circumvent an empty limit_order_book
+            - agent_list; to store all the agents
+        More on behalf of the limit_order_book:
+        The limit_order_book is a list with 2 entries, which again are lists. The first one stores the sell order
+        the second one stores the buy order. Each sell resp. buy order is a tuple with 3 entries. The first entry
+        corresponds to the price per share offered in the order. The second one corresponds to the time step
+        when the order gets canceled. The third one corresponds to the unique_id of the agent how placed the order.
+        """
+        super().__init__()
+        self.limit_order_book = l_o_b
+        self.clock = 0
+        self.order_arrival = self.clock + next_order()
+        self.last_sell = init_stock_price
+        self.last_buy = init_stock_price
+        self.agent_list = []
+        for i in range(num_a):
+            a = TradingAgent(i, self)
+            self.agent_list.append(a)
+
+    def get_limit_price(self):
+        """
+        Returns the lowest sell order and the highest buy order.
+        If the limit_order_book has no sell order resp. no buy order,
+        the last ask price resp. bid price corresponding to the last_buy resp. last_sell is used.
+        """
+        if len(self.limit_order_book[0]) == 0:
+            get_ask = self.last_buy
+        else:
+            get_ask = min(self.limit_order_book[0])[0]  # minimum with respect to first element of tuples
+        if len(self.limit_order_book[1]) == 0:
+            get_bid = self.last_sell
+        else:
+            get_bid = max(self.limit_order_book[1])[0]  # maximum with respect to first element of tuples
+        return get_ask, get_bid
+
+    def refresh_lob(self):
+        """
+        Iterates through all the elements of the sell order list and  the buy order list and cancels all
+        orders, which have been in the limit_order_book for more than 600 seconds.
+        """
+        for sell_tuple in self.limit_order_book[0]:
+            if sell_tuple[1] < self.clock:
+                index_t = self.limit_order_book[0].index(sell_tuple)
+                del(self.limit_order_book[0][index_t])
+        for buy_tuple in self.limit_order_book[1]:
+            if buy_tuple[1] < self.clock:
+                index_t = self.limit_order_book[1].index(buy_tuple)
+                del(self.limit_order_book[1][index_t])
+
+    def step(self):
+        """
+        If the order waiting time has passed, one agent gets randomly chosen to place an order.
+        Before the selected agent does his step,
+        the limit_order_book needs to be refreshed and a new order waiting time must be calculated.
+        To trace the current step, at the end of the step the clock must be updated.
+        """
+        if self.clock == self.order_arrival:
+            self.refresh_lob()
+            self.order_arrival = self.clock + next_order()
+            active_agent = random.choice(self.agent_list)
+            active_agent.step()
+        self.clock += 1
+
+    def trading_partner(self, key):
+        """Returns the agent whose unique_id corresponds to key."""
+        for agent in self.agent_list:
+            if key == agent.unique_id:
+                return agent
 ```
