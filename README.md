@@ -56,8 +56,8 @@ In this simple reproducibility test we let you simulate the market and plot the 
 2. Run the file "Reproducibility_light" with python without changing any of the code. After say 5 seconds you should receive a plot of the price path. This result is obtained for a small standard deviation of the normal distribution, which corresponds to traders behaving all very simmilar.
 3. Search for the global variable "std" which has been set to 0.001 by default. Change it to 0.01 and run the programm again.
 The plot which you receive this time should vary stronger around 100 then before, which corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.
-![some text](https://github.com/alme96/Simulnance/blob/master/small_std.png)
-![some more text](https://github.com/alme96/Simulnance/blob/master/large_std.png)
+![some text](small_std.png)
+![some more text](large_std.png)
 
 ## Full test
 The results that we came up with are the visualizations of the estimated price path of the stock and its log returns.
