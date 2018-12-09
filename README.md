@@ -64,6 +64,8 @@ The plot which you receive this time should vary stronger around 100 then before
 ## Full test
 The results that we came up with are the visualizations of the estimated price path of the stock and its log returns.
 Since we implemented two models we derived all the results two times. Therefore, this test will be split into two parts.
-The first one considers the simpler model where the decision making of the traders isn't influenced by price volatility.
-The second one will consider a dependency between the decision making of traders and price volatility.
+The first one (the simple model) considers the simpler model where the decision making of the traders isn't influenced by price volatility.
+The second one (the advanced model) will consider a dependency between the decision making of traders and price volatility.
+
+### The simple model
 
