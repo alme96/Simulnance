@@ -13,17 +13,17 @@ The primary motivation of the paper is to mimic a real financial market using ag
 
 ## The Model
 
-In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. The variables are measured through agents, time and stock parameters. The amount of Agents are set, the amount of days and daily section in which the model is applied is set by authors . In addtion, Intial stock amount is given to agent and money creation is not allowed in the model.) (The model addresed key parameters used in the research of Raberto, 2005.Through using multiple scenarios for the simulation, authors were able to analyze the stability of the outputs.
+In the model Price of a stock is a dependent variable and the behaviour of traders is an independent variable that corresponds to the structure of the model. The variables are measured through agents, time and stock parameters. The amount of Agents are set, the amount of days and daily section in which the model is applied is set by authors . In addtion, Intial stock amount is given to agent and money creation is not allowed in the model.) (The model addresed key parameters used in the research of (Raberto & Cincotti, 2005).Through using multiple scenarios for the simulation, authors were able to analyze the stability of the outputs.
 
 
 ## Fundamental Questions
 
-The paper addresses three main research questions. Firstly, what is the reproducibility potential of agent based financial market simulation executed in the research of Raberto, 2005? Secondly, what are the similarities and differences in the outputs of the simulations? Is improvement possible? 
+The paper addresses three main research questions. Firstly, what is the reproducibility potential of agent based financial market simulation executed in the research of (Raberto & Cincotti, 2005)? Secondly, what are the similarities and differences in the outputs of the simulations? Is improvement possible? 
 
 
 ## Expected Results
 
-The anticipated result before starting our research was a recreateion of the simulation executed by (Raberto 2005).
+The anticipated result before starting our research was a recreateion of the simulation executed by (Raberto & Cincotti, 2005).
 
 
 ## References 
