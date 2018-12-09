@@ -62,4 +62,8 @@ In this simple reproducibility test we let you simulate the market and plot the 
 The plot which you receive this time should vary stronger around 100 then before, which corresponds to traders behaving very differently. This happens when there's high uncertainty about te actuall stock price.
 
 ## Full test
-(step by step instructions to reproduce all your results.) 
+The results that we came up with are the visualizations of the estimated price path of the stock and its log returns.
+Since we implemented two models we derived all the results two times. Therefore, this test will be split into two parts.
+The first one considers the simpler model where the decision making of the traders isn't influenced by price volatility.
+The second one will consider a dependency between the decision making of traders and price volatility.
+
