@@ -106,10 +106,10 @@ The function next_order returns the random time interval between consecutive ord
 def next_order():
     return math.ceil(np.random.exponential(avg_order_waiting_time, None))
 ```
-The class TradingModel inherits from Model and determines the structure of our model.
+The class TradingModel presented below inherits from Model and determines the structure of our model.
 Various functions have been implemented.
 
-On behalf of \__ init \__ function. Here all the agents are created.  
+On behalf of `__init__(self, l_o_b)`. Here all the agents are created.  
 Furthermore we need:  
 * limit_order_book; to store all the unresolved sell and buy orders.  
 * clock; as a reference value for the orders which are cancelled after a while and the order waiting times.  
@@ -122,6 +122,20 @@ The limit_order_book is a list with 2 entries, which again are lists. The first 
 the second one stores the buy order. Each sell resp. buy order is a tuple with 3 entries. The first entry
 corresponds to the price per share offered in the order. The second one corresponds to the time step
 when the order gets canceled. The third one corresponds to the unique_id of the agent how placed the order.
+
+The function `get_limit_price(self) ` returns the lowest sell order and the highest buy order.
+If the limit_order_book has no sell order resp. no buy order,
+the last ask price resp. bid price corresponding to the last_buy resp. last_sell is used.
+
+The function `refresh_lob(self)` iterates through all the elements of the sell order list and  the buy order list and cancels all
+orders, which have been in the limit_order_book for more than 600 seconds.
+
+Regarding the function `step(self)`. If the order waiting time has passed, one agent gets randomly chosen to place an order.
+Before the selected agent does his step,
+the limit_order_book needs to be refreshed and a new order waiting time must be calculated.
+To trace the current step, at the end of the step the clock must be updated.
+
+The function `trading_partner(self, key)` returns the agent whose unique_id corresponds to key.
 ```
 class TradingModel(Model):
     def __init__(self, l_o_b):
@@ -137,11 +151,6 @@ class TradingModel(Model):
             self.agent_list.append(a)
 
     def get_limit_price(self):
-        """
-        Returns the lowest sell order and the highest buy order.
-        If the limit_order_book has no sell order resp. no buy order,
-        the last ask price resp. bid price corresponding to the last_buy resp. last_sell is used.
-        """
         if len(self.limit_order_book[0]) == 0:
             get_ask = self.last_buy
         else:
@@ -153,10 +162,6 @@ class TradingModel(Model):
         return get_ask, get_bid
 
     def refresh_lob(self):
-        """
-        Iterates through all the elements of the sell order list and  the buy order list and cancels all
-        orders, which have been in the limit_order_book for more than 600 seconds.
-        """
         for sell_tuple in self.limit_order_book[0]:
             if sell_tuple[1] < self.clock:
                 index_t = self.limit_order_book[0].index(sell_tuple)
@@ -167,12 +172,6 @@ class TradingModel(Model):
                 del(self.limit_order_book[1][index_t])
 
     def step(self):
-        """
-        If the order waiting time has passed, one agent gets randomly chosen to place an order.
-        Before the selected agent does his step,
-        the limit_order_book needs to be refreshed and a new order waiting time must be calculated.
-        To trace the current step, at the end of the step the clock must be updated.
-        """
         if self.clock == self.order_arrival:
             self.refresh_lob()
             self.order_arrival = self.clock + next_order()
