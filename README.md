@@ -109,19 +109,19 @@ def next_order():
 The class TradingModel inherits from Model and determines the structure of our model.
 Various functions have been implemented.
 
-On behalf of `__init__(self, l_o_b)`:  
+####On behalf of `__init__(self, l_o_b)` 
 Initialisation of the model. Here all the agents are created.  
-        Furthermore we need:  
-            - limit_order_book; to store all the unresolved sell and buy orders.  
-            - clock; as a reference value for the orders which are cancelled after a while and the order waiting times.  
-            - order_arrival; as a fixed time step where the next order gets placed  
-            - last_sell & last_buy; to circumvent an empty limit_order_book  
-            - agent_list; to store all the agents  
-        More on behalf of the limit_order_book:  
-        The limit_order_book is a list with 2 entries, which again are lists. The first one stores the sell order
-        the second one stores the buy order. Each sell resp. buy order is a tuple with 3 entries. The first entry
-        corresponds to the price per share offered in the order. The second one corresponds to the time step
-        when the order gets canceled. The third one corresponds to the unique_id of the agent how placed the order.
+Furthermore we need:  
+* limit_order_book; to store all the unresolved sell and buy orders.  
+* clock; as a reference value for the orders which are cancelled after a while and the order waiting times.  
+* order_arrival; as a fixed time step where the next order gets placed  
+* last_sell & last_buy; to circumvent an empty limit_order_book  
+* agent_list; to store all the agents  
+More on behalf of the limit_order_book:  
+The limit_order_book is a list with 2 entries, which again are lists. The first one stores the sell order
+the second one stores the buy order. Each sell resp. buy order is a tuple with 3 entries. The first entry
+corresponds to the price per share offered in the order. The second one corresponds to the time step
+when the order gets canceled. The third one corresponds to the unique_id of the agent how placed the order.
 ```
 class TradingModel(Model):
     def __init__(self, l_o_b):
