@@ -109,7 +109,7 @@ def next_order():
 The class TradingModel inherits from Model and determines the structure of our model.
 Various functions have been implemented.
 
-####On behalf of `__init__(self, l_o_b)` 
+#### On behalf of `__init__(self, l_o_b)` 
 Initialisation of the model. Here all the agents are created.  
 Furthermore we need:  
 * limit_order_book; to store all the unresolved sell and buy orders.  
