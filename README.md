@@ -339,16 +339,15 @@ if p_value < 0.005:
 else:
     print("The null hypotheses of normal distribution for the log returns cannot be rejected.")
 ```
-Plotting the log returns. The bars need a large width to be visible.
+Below the log returns are plotted. The bars need a large width to be visible.
 ```
 x_val = [select_x[1] for select_x in log_return]
 y_val = [select_y[0] for select_y in log_return]
 plt.bar(x_val, y_val, width=100)
 plt.show()
 ```
-
+As a last step we also plotted the price path.
 ```
-Plotting the price path.
 x_val_price = [select_x[1] for select_x in interpolate]
 y_val_price = [select_y[0] for select_y in interpolate]
 plt.plot(x_val_price, y_val_price)
