@@ -2,10 +2,10 @@
 # Modeling and Simulation of Social Systems Fall 2018 – Research Plan (Template)
 
 
-> * Group Name: (Simulnance)
-> * Group participants names: (Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent)
-> * Project Title: (Trade!t)
-> * Programming language: (Python)
+> * Group Name: Simulnance
+> * Group participants names: Kedir Firehiwot Nesro, Menichelli Alessandro, Wüst Vincent
+> * Project Title: Trade!t
+> * Programming language: Python
 
 ## General Introduction
 
@@ -39,10 +39,6 @@ Raberto, M., Cincotti, S., Focardi, S. M., & Marchesi, M. (2001). Agent-based si
 ## Research Methods
 
 Agent-Based Modelling
-
-
-## Other
-
 
 # Reproducibility
 
