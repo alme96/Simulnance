@@ -94,9 +94,9 @@ std = 0.005
 
 The fallowing function determines a random amount of shares which both traders can afford.
 
-def trade_amount(a_val, b_val):
-    if a_val <= 0 or b_val <= 0:  # To assure that the input of randint corresponds to a valid interval
-        return 0
-    temp0 = min(a_val, b_val)
-    temp1 = random.randint(0, temp0)
-    return temp1
+def trade_amount(a_val, b_val):  
+    if a_val <= 0 or b_val <= 0:  # To assure that the input of randint corresponds to a valid interval  
+        return 0  
+    temp0 = min(a_val, b_val)  
+    temp1 = random.randint(0, temp0)  
+    return temp1  
