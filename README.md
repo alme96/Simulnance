@@ -68,4 +68,16 @@ The first one (the simple model) considers the simpler model where the decision 
 The second one (the advanced model) will consider a dependency between the decision making of traders and price volatility.
 
 ### The simple model
+First some packages must be installed. The mesa package and the matplotlib package aren't installed by default.
 
+from mesa import Agent, Model
+
+import random
+
+import matplotlib.pyplot as plt
+
+import numpy as np
+
+import math
+
+from scipy import stats
