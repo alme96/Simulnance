@@ -544,6 +544,19 @@ Otherwise the current trader will proceed at the bid_price with the trader
 that formed the order of the bid_price. A random amount of shares, affordable for both trading partners
 gets selected and traded at the bid_price.
 After that, the order at the bid_price from the limit_order_book gets canceled.
+
+The function `buy_order(self)` is constructed similarly. To form a buy order, the trader i.e. the agent needs to now the current bid_price.
+If there are no buy orders in the limit_order_book from which the bid_price could be deduced,
+The last bid_price available is chosen, which corresponds to last_sell.
+The final buy order (b_order) is normally distributed around the bid_price.
+If the b_order is below the ask_price or there aren't any sell orders in the limit_order_book,
+b_order gets stored in the limit_order_book,
+together with the time when it gets cancelled and the unique_id of the agent (in this order).
+Otherwise the current trader will proceed at the ask_price with the trader
+that formed the order of the ask_price. A random amount of shares, affordable for both trading partners
+gets selected and traded at the ask_price.
+After that, the order at the ask_price from the limit_order_book gets canceled.
+
 ```class TradingAgent(Agent):
 
     def __init__(self, unique_id, model):
@@ -559,19 +572,6 @@ After that, the order at the bid_price from the limit_order_book gets canceled.
             self.sell_order()
 
     def sell_order(self):
-        """
-        To form a sell order, the trader i.e. the agent needs to now the current ask_price.
-        If there are no sell orders in the limit_order_book from which the ask_price could be deduced,
-        The last ask_price available is chosen, which corresponds to last_buy.
-        The final sell order (s_order) is normally distributed around the ask_price.
-        If the s_order is above the bid_price or there aren't any buy orders in the limit_order_book,
-        s_order gets stored in the limit_order_book,
-        together with the time when it gets cancelled and the unique_id of the agent (in this order).
-        Otherwise the current trader will proceed at the bid_price with the trader
-        that formed the order of the bid_price. A random amount of shares, affordable for both trading partners
-        gets selected and traded at the bid_price.
-        After that, the order at the bid_price from the limit_order_book gets canceled.
-        """
         if len(self.model.limit_order_book[0]) == 0:
             ask_price = self.model.last_buy
         else:
@@ -601,19 +601,6 @@ After that, the order at the bid_price from the limit_order_book gets canceled.
             del(self.model.limit_order_book[1][index_t])
 
     def buy_order(self):
-        """
-        To form a buy order, the trader i.e. the agent needs to now the current bid_price.
-        If there are no buy orders in the limit_order_book from which the bid_price could be deduced,
-        The last bid_price available is chosen, which corresponds to last_sell.
-        The final buy order (b_order) is normally distributed around the bid_price.
-        If the b_order is below the ask_price or there aren't any sell orders in the limit_order_book,
-        b_order gets stored in the limit_order_book,
-        together with the time when it gets cancelled and the unique_id of the agent (in this order).
-        Otherwise the current trader will proceed at the ask_price with the trader
-        that formed the order of the ask_price. A random amount of shares, affordable for both trading partners
-        gets selected and traded at the ask_price.
-        After that, the order at the ask_price from the limit_order_book gets canceled.
-        """
         if len(self.model.limit_order_book[1]) == 0:
             bid_price = self.model.last_sell
         else:
@@ -641,5 +628,4 @@ After that, the order at the bid_price from the limit_order_book gets canceled.
             self.shares = self.shares + n_trade
             index_t = self.model.limit_order_book[0].index((ask_price, a_deadline, a_id))
             del(self.model.limit_order_book[0][index_t])
-
 ```
